@@ -12,8 +12,11 @@ def code_source(source: str) -> str:
     return "".join(chr(char) for char in converted)
 
 
+#  Decoding message using our CODE_KEY
 def decode_message(source: str) -> str:
+    #  Convert ascii to int and subtruct CODE_KEY value from it
     converted = [ord(char) - CODE_KEY for char in source]
+    #  Return string with new ascii codes for symbols
     return "".join(chr(char) for char in converted)
 
 
